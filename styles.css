@@ -1,0 +1,125 @@
+/* Reset mínimo y variables de tema */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+:root {
+  --bg: #0f1115;
+  --card: rgba(255,255,255,0.06);
+  --text: #f4f6f8;
+  --muted: #c9ced6;
+  --btn-bg: #81b71a;
+  --btn-text: #0f1115;
+  --btn-hover: #e9eef7;
+  --ring: 0 0 0 3px rgba(99, 102, 241, 0.45);
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+  --shadow-lg: 0 10px 30px rgba(0,0,0,0.35);
+  --shadow-sm: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #0f1115;
+    --muted: #495061;
+    --btn-bg: #81b71a;
+    --btn-text: #ffffff;
+    --btn-hover: #6a9814;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 50% -10%, #800365, var(--bg));
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Layout principal */
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-2xl);
+  padding: 28px 22px;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+/* Logo centrado y responsivo */
+.logo {
+  inline-size: clamp(9px, 36vw, 160px);
+  block-size: auto;
+  border-radius: 10%;
+  display: block;
+  margin: 8px auto 18px;
+  box-shadow: var(--shadow-sm);
+  object-fit: cover;
+  padding: 20px 20px;
+}
+
+/* Contenedor de botones */
+.links {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+/* Botón estilo Linktree */
+.link-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 18px;
+  border-radius: var(--radius-xl);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform;
+}
+
+.link-btn:hover {
+  transform: translateY(-1px);
+  background: var(--btn-hover);
+}
+
+.link-btn:active {
+  transform: translateY(0);
+}
+
+.link-btn:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+/* Footer sencillo */
+.footer {
+  margin-top: 14px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Soporte para pantallas muy grandes (no imprescindible) */
+@media (min-width: 768px) {
+  .card { padding: 36px 28px; }
+  .links { gap: 16px; }
+}
+

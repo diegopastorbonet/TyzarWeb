@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tus enlaces</title>
+    <meta name="description" content="Página simple de enlaces estilo Linktree." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card" role="region" aria-label="Enlaces principales">
+        <!-- LOGO -->
+        <img
+          class="logo"
+          src="/logo_tyzar.png"
+          alt="Nombre de tu marca"
+        />
+
+        <!-- BOTONES -->
+        <nav class="links" aria-label="Lista de enlaces">
+
+          <a
+            class="link-btn"
+            href="https://open.spotify.com/playlist/6ujw3a5K8Wczq0mfHsyNCp?si=4052d8beeb2048e3"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi enlace principal (se abre en una pestaña nueva)"
+          >
+            Spotify
+          </a>
+
+          <a
+            class="link-btn"
+            href="audios.html"
+          >
+            Tyzar Essentials
+          </a>
+          <!-- Para añadir más botones, duplica el <a> de arriba -->
+        </nav>
+      </section>
+
+      <footer class="footer">
+        <small>© <span id="year"></span> Tyzar Corp.</small>
+      </footer>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
